@@ -2,12 +2,12 @@ const inquirer = require('inquirer');
 const Manager = require('./pages/Manager');
 const Engineer = require('./pages/Engineer');
 const Intern = require('./pages/Intern');
-const generateSite = require('');
+const generateSite = require('./generate-site');
 const fs = require("fs");
+const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "index.html");
-const path = require("path");
-/// const Choices = require("inquirer/lib/objects/choices");
+
 const teamMembers = [];
 
 const promptManager = () => {
@@ -69,7 +69,7 @@ const promptManager = () => {
     .then((answer) => {
       console.log(answer);
       const manager = new Manager(
-        answers.name,
+        answer.name,
         answer.employeeId,
         answer.email,
         answer.officeNumber
