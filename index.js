@@ -7,7 +7,7 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "index.html");
 const path = require("path");
-const Choices = require("inquirer/lib/objects/choices");
+/// const Choices = require("inquirer/lib/objects/choices");
 const teamMembers = [];
 
 const promptManager = () => {
@@ -86,7 +86,7 @@ const promptMenu = () => {
         type: "list",
         name: "menu",
         message: "Please choose which you like to continue with:",
-        choices: ["add Engineer", "add Intern"],
+        choices: ["add Engineer", "add Intern", "add Build Team"],
       },
     ])
     .then((userChoice) => {
@@ -97,6 +97,8 @@ const promptMenu = () => {
         case "add Intern":
           promptIntern();
           break;
+          default:
+            buildTeam();
       }
     });
 };
@@ -242,5 +244,18 @@ const promptIntern = () => {
       promptMenu();
     })
   };
+
+  const buildTeam = () => {
+    console.log(`
+        - Build the Team -    
+      `);
+
+      if(!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+      }
+
+      fs.writeFileSync(outputPath, generateSite(teamMembers), "utf-8");
+    
+  }
 
   promptManager();
