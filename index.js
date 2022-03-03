@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const Manager = require('');
-const Engineer = require('');
-const Intern = require('');
+const Manager = require('./pages/Manager');
+const Engineer = require('./pages/Engineer');
+const Intern = require('./pages/Intern');
 const generateSite = require('');
 const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
