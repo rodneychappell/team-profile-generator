@@ -1,40 +1,41 @@
-* {
-    box-sizing: border-box;
+header {
+  background-color: rgba(231, 78, 78, 0.932);
+  color: white;
+  display: flex;
+  padding: 10px;
 }
 
 :root {
-    --primary: lightslategray;
-    --secondary: white;
+  --primary: lightslategray;
+  --secondary: white;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#navbar {
-    background-color: var(--primary);
-    color: var(--secondary);
-    font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar-brand {
-    font-size: 50px;
+  font-size: 50px;
 }
 
-
-.card-header {
-    background-color: var(--primary);
-    color: var(--secondary);
+#navbar {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: 50px;
 }
 
 .card-body {
-    background-color: var(--secondary);
-    color: var(--primary);
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.card-header {
+  background-color: var(--primary);
+  color: var(--secondary);
 }
 
 .container {
-    margin: 100px auto;
-    justify-content: space-evenly;
-    display: flex;
-    
+  margin: 100px auto;
+  justify-content: space-evenly;
+  display: flex;
 }

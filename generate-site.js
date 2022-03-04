@@ -35,7 +35,7 @@ const generateTeam = (team) => {
                 </div>
             </div>
         </div>`;
-        html.push(engineerHtml)
+        html.push(engineerHtml);
     }
     const generateIntern = intern => {
         console.log(intern);
@@ -53,8 +53,8 @@ const generateTeam = (team) => {
                 </div>
         </div>
     </div>`
-    html.push(internHtml)
-    };
+    html.push(internHtml);
+    }
 
     for (let i = 0; i < team.length; i++) {
         if(team[i].getRole() === "Manager") {
