@@ -16,10 +16,12 @@ const generateTeam = (team) => {
             </div>
         </div>
     </div>`;
+    html.push(managerHtml);
     }
 
     const generateEngineer = engineer => {
-        return `
+        console.log(engineer);
+        let engineerHtml = `
         <div class="col-4 mt-4">
             <div class="card h-100">
                 <div class="card-header">
@@ -33,9 +35,11 @@ const generateTeam = (team) => {
                 </div>
             </div>
         </div>`;
+        html.push(engineerHtml)
     }
-    const generateIntern = function (intern) {
-        return `
+    const generateIntern = intern => {
+        console.log(intern);
+        let internHtml = `
         <div class="col-4 mt-4">
             <div class="card h-100">
                 <div class="card-header">
@@ -49,6 +53,7 @@ const generateTeam = (team) => {
                 </div>
         </div>
     </div>`
+    html.push(internHtml)
     };
 
     for (let i = 0; i < team.length; i++) {
