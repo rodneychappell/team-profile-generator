@@ -86,10 +86,10 @@ const promptMenu = () => {
         type: 'list',
         name: 'menu',
         message: 'Please choose which you like to continue with:',
-        choices: ['add Engineer", "add Intern", "add Build Team'],
-      },
+        choices: ['add Engineer', 'add Intern', 'add Build Team']
+      }
     ])
-    .then((userChoice) => {
+    .then(userChoice => {
       switch (userChoice.menu) {
         case 'add Engineer':
           promptEngineer();
@@ -164,7 +164,7 @@ const promptEngineer = () => {
   ]).then((answer) => {
     console.log(answer);
     const engineer = new Engineer(
-      answers.name,
+      answer.name,
       answer.employeeId,
       answer.email,
       answer.githubUsername

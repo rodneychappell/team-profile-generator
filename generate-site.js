@@ -50,19 +50,24 @@ const generateTeam = (team) => {
         </div>
     </div>`
     };
+
+    for (let i = 0; i < team.length; i++) {
+        if(team[i].getRole() === "Manager") {
+            generateManager(team[i]);
+        }
+        if(team[i].getRole() === "Engineer") {
+            generateEngineer(team[i]);
+        }
+        if(team[i].getRole() === "Intern") {
+            generateIntern(team[i]);
+        }
+    }
+    return html.join ('');
+
+
 }
 
-for (let i = 0; i < team.length; i++) {
-    if(team[i].getRole()=== "Manager") {
-        generateManager(team[i]);
-    }
-    if(team[i].getRole()=== "Engineer") {
-        generateEngineer(team[i]);
-    }
-    if(team[i].getRole()=== "Intern") {
-        generateIntern(team[i]);
-    }
-}
+
 
 module.exports = team => {
     return`
@@ -88,7 +93,7 @@ module.exports = team => {
           <div class="container">
               <div class="row justify-content-center" id="team-cards">
                   <!--Team Cards-->
-                  ${employeeCards}
+                  ${generateTeam(team)}
               </div>
           </div>
       </main>
