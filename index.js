@@ -235,7 +235,7 @@ const promptIntern = () => {
     ]).then((answer) => {
       console.log(answer);
       const intern = new Intern(
-        answers.name,
+        answer.name,
         answer.employeeId,
         answer.email,
         answer.githubUsername
