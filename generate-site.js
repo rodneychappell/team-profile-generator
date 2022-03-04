@@ -70,8 +70,7 @@ const generateTeam = (team) => {
 
 
 module.exports = team => {
-    return`
-  <!DOCTYPE html>
+    return`<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -93,7 +92,7 @@ module.exports = team => {
           <div class="container">
               <div class="row justify-content-center" id="team-cards">
                   <!--Team Cards-->
-                  ${generateTeam(team)}
+                  ${generateTeam}
               </div>
           </div>
       </main>
